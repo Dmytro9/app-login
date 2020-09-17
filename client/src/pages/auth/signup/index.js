@@ -5,7 +5,7 @@ import LinkComponent from '../../../components/link';
 import { FormBlock, FormHeader, FormBody, Form } from '../signin/styled';
 
 export default ({
-  data: { handleChange, validationError, handleSubmit, isLoading },
+  data: { handleChange, validationError, handleSubmit, isLoading, serverError },
 }) => {
   return (
     <FormBlock>
@@ -20,7 +20,7 @@ export default ({
             label="Username"
             required={true}
             onChange={handleChange}
-            errorMessage={validationError.username}
+            errorMessage={validationError.username || serverError}
           />
           <InputComponent
             name="password"
