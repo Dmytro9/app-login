@@ -12,7 +12,7 @@
 ## Testing:
 
 ```
-- make sure the node -v is ^10
+- make sure you are using node version up ^10
 
 - cd client
 - npm ci
