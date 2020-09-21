@@ -7,6 +7,10 @@ export const loginReducer = (state, action) => {
         ...state,
         serverError: '',
         [action.field]: action.value,
+        validationError: {
+          ...state.validationError,
+          [action.field]: '',
+        },
       };
     }
     case ActionTypes.LOGIN: {

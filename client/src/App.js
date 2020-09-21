@@ -17,7 +17,6 @@ function App() {
           <PrivateRoute exact path="/" component={Home} />
           <Route component={() => <h1>Not Found</h1>} />
         </Switch>
-
         <GlobalStyle />
       </Container>
     </Router>

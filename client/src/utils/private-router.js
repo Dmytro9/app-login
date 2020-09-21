@@ -1,20 +1,22 @@
 import React from 'react';
+import Cookies from 'js-cookie';
 import { Route, Redirect } from 'react-router-dom';
-import { checkAuth } from './check-auth';
 
-export const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={(props) =>
-      checkAuth() === true ? (
-        <Component {...props} />
-      ) : (
-        <Redirect
-          to={{
-            pathname: '/signup',
-          }}
-        />
-      )
-    }
-  />
-);
+export const PrivateRoute = ({ component: Component, authed, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={(props) =>
+        Cookies.get('express:sess') ? (
+          <Component {...props} />
+        ) : (
+          <Redirect
+            to={{
+              pathname: '/signup',
+            }}
+          />
+        )
+      }
+    />
+  );
+};

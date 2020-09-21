@@ -3,7 +3,7 @@ import { NotAuthorizedError } from '../errors/not-authorized-error';
 
 interface UserPayload {
   id: string;
-  email: string;
+  username: string;
 }
 
 declare global {
